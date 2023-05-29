@@ -14,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 builder.Services.AddIdentityOpt();
+builder.Services.SetCookieOptions();
 
 
 var app = builder.Build();
