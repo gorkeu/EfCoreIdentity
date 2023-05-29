@@ -37,8 +37,9 @@ namespace AspNetIdentity.Web.ServiceConfigs
             {
                 var cookieBuilder = new CookieBuilder();
                 cookieBuilder.Name = "GorkeuAppCookie";
-                opt.LoginPath = new PathString("/Home/Signin");
 
+                opt.LoginPath = new PathString("/Home/Signin");
+                opt.LogoutPath = new PathString("/Member/Signout");
                 opt.Cookie = cookieBuilder;
                 opt.ExpireTimeSpan = TimeSpan.FromDays(60);
                 opt.SlidingExpiration = true;

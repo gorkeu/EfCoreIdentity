@@ -25,11 +25,13 @@
     <None Remove="Areas\Admin\Views\Home\" />
     <None Remove="Areas\Admin\Views\Shared\" />
     <None Remove="ServiceConfigs\" />
+    <None Remove="Views\Member\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Areas\Admin\Views\Home\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="ServiceConfigs\" />
+    <Folder Include="Views\Member\" />
   </ItemGroup>
 </Project>
