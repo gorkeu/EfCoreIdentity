@@ -74,7 +74,7 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> SignIn(SignInViewModel request, string? returnUrl=null)
     {
-        returnUrl = returnUrl ?? Url.Action("Home", "Index");
+        returnUrl = returnUrl ?? Url.Action("Index", "Home");
         var getUser = await _userManager.FindByEmailAsync(request.Email!);
 
         if (getUser == null)
@@ -91,6 +91,15 @@ public class HomeController : Controller
         ModelState.AddModelError(string.Empty, "Email or password is wrong");
 
         return View();
+    }
+    
+    public async Task<IActionResult> SignOut()
+    {
+        await _signInManager.SignOutAsync();
+
+        return RedirectToAction(nameof(Index));
+
+
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
